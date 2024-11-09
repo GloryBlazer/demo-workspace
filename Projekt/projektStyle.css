@@ -1,0 +1,78 @@
+:root {
+  --primary-color: rgb(50,200,140);
+  --secondary-color: rgb(255,0,0);
+  background-color: rgb(140,50,200);
+}
+
+h1{
+display: block;
+font-style:oblique;
+text-transform: capitalize;
+text-align: center;
+width: 80%;
+}
+    body {
+      color: var(--secondary-color);
+      background-color: rgb(200,140,50);
+    }
+
+    /* div{
+      display: flex;
+    } */
+
+    main{
+      background-color: var(--primary-color);
+      /*display:flex;*/
+      flex-direction: column;
+      width: 80%;
+    }
+    div.popup{
+      /*display:flex;*/
+      flex-direction: column;
+      justify-content: space-between;
+      position: fixed;
+      right: -20%;
+      height: 100%;
+      box-shadow: -3px 0 5px rgba(0,0,0,0.3);
+      background-color: whitesmoke;
+      width: 25%;
+      z-index: 2;
+      transition: right 1s ease; /* Smooth slide-in effect */
+    }
+    p.popup-text{
+      text-align: center;
+      width: 25%;
+    }
+    footer{
+      display:flex;
+      justify-content: space-around;
+      background-color: whitesmoke;
+      width: 80%;
+    }
+    div.otazky{
+      display: flex;
+      flex-direction:column;
+      justify-content: space-around;
+      width: 80%;
+    }
+    form{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 80%;
+    }
+    label{
+      display: flex;
+      flex-direction:column;
+      justify-content: space-between;
+    }
+    .hover-area {
+      position: fixed;
+      right: -10%;
+      top: 0;
+      width: 25%;
+      height: 100%;
+      background-color: transparent;
+      cursor: pointer;
+      z-index: 3;
+  }

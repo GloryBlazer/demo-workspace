@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}reklama{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">      
+        {% block stylesheets %}
+        {% endblock %}
+
+        {% block javascripts %}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
+    </head>
+    <body>
+    {% block body %}
+  <div class="popup">
+  {% block popup %}
+    {% endblock popup %}
+    </div>
+
+<h1>
+Otestujte se
+</h1>
+<header>
+{% block header %}
+<div class="middle">
+  <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint"</p>
+
+    <a href="answer.html">Go to Example Site</a>
+</div>
+<div class="otazky">
+  <form action="#" method="post">
+    <fieldset>
+    <label for="W">
+      <input type="radio" name="cena" value="1" required>
+      <input type="radio" name="cena" value="2" required>
+      <input type="radio" name="cena" value="3" required>
+      <input type="radio" name="cena" value="4" required>
+      <input type="radio" name="cena" value="5" required>
+      fseffese
+    </label>
+    <label for="A">
+      <input type="radio" name="mnozstvi" value="1" required>
+      <input type="radio" name="mnozstvi" value="2" required>
+      <input type="radio" name="mnozstvi" value="3" required>
+      <input type="radio" name="mnozstvi" value="4" required>
+      <input type="radio" name="mnozstvi" value="5" required>
+      fhfhfxhxtf
+    </label>
+    <!--<button type="submit">submit</button>
+  -->
+  <input type="submit" value="SubmitAnswers" name="submitanswers">
+  <input type="submit" value="SubmitAnswersAlt" name="submit" onclick="redirect(); return false;">
+  </fieldset>
+</div>
+<p> Vysledek operace je : <span id="vysledek"></span></p>
+{% endblock header %}
+</header>
+<footer>
+{% block footer %}
+  <p class="footer-header">
+      kontakt
+  </p>
+  <address>
+      1
+      <br> W
+  </address>
+  <p>
+      Email:
+      <a href="mailto: email@email.cz">
+          mail@mail.cz
+      </a>
+  </p>
+  <p>
+      Tel:
+      <a href="tel:3625550100"> 
+          3625550100
+      </a>
+  </p>
+{% endblock footer %}
+</footer>
+        {% endblock %}
+    </body>
+</html>

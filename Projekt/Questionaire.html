@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    Questionnaire
+  </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="projektStyle.css">
+</head>
+
+<body>
+  <aside>
+    <div class="hover-area"></div>
+    <div class="popup">
+      <article>
+        <p class="popup-text">test</p>
+      </article>
+    </div>
+    
+    <script>// Select the pop-up element
+      const hoverarea = document.querySelector('.hover-area');
+      const popup = document.querySelector('.popup');
+      // Hide the popup when the mouse leaves the pop-up area
+      hoverarea.addEventListener('mouseleave', () => {
+        popup.style.right = '-20%';
+        hoverarea.style.right = '-20%';
+      });
+      hoverarea.addEventListener('mouseover', () => {
+        popup.style.right = '0%';
+        hoverarea.style.right = '0%';
+      });</script>
+    </aside>
+    
+    <h1>
+      Otestujte se
+    </h1>
+    <nav>
+      <a href="answer.html">Go to Example Site</a>
+    </nav>
+    <main>
+      <header>
+        <div class="text">
+          <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint"</p>
+            
+          </div>
+        </header>
+        <div class="otazky">
+          <form action="#" method="post">
+            <fieldset>
+              <label for="W">
+                <input type="radio" name="cena" value="1" required>
+                <input type="radio" name="cena" value="2" required>
+                <input type="radio" name="cena" value="3" required>
+                <input type="radio" name="cena" value="4" required>
+                <input type="radio" name="cena" value="5" required>
+                fseffese
+              </label>
+              <label for="A">
+                <input type="radio" name="mnozstvi" value="1" required>
+                <input type="radio" name="mnozstvi" value="2" required>
+                <input type="radio" name="mnozstvi" value="3" required>
+                <input type="radio" name="mnozstvi" value="4" required>
+                <input type="radio" name="mnozstvi" value="5" required>
+                fhfhfxhxtf
+              </label>
+              <!--<button type="submit">submit</button>
+              -->
+              <input type="submit" value="SubmitAnswers" name="submitanswers">
+              <input type="submit" value="SubmitAnswersAlt" name="submit" onclick="redirect(); return false;">
+            </fieldset>
+          </form>-
+        </div>
+        <p> Vysledek operace je : <span id="vysledek"></span></p>
+      </main>
+      <footer>
+        <p class="footer-header">
+          kontakt
+        </p>
+        <address>
+          1
+          <br> W
+        </address>
+        <p>
+          Email:
+          <a href="mailto: email@email.cz">
+            mail@mail.cz
+          </a>
+        </p>
+        <p>
+          Tel:
+          <a href="tel:3625550100"> 
+            3625550100
+          </a>
+        </p>
+      </footer>
+      
+      
+      <script>
+        
+        let cena= document.querySelectorAll('input[name="cena"]');
+        let mnozstvi= document.querySelectorAll('input[name="mnozstvi"]');
+        let aktualniCena =0;
+        let aktualniMnozstvi =0;
+        const celkem = document.getElementById('vysledek');
+        
+        cena.forEach(input => {
+          
+          input.addEventListener('change',(event)=> {
+            
+            if(event.target.checked == true) {
+              aktualniCena = event.target.value;
+              celkem.textContent = event.target.value * aktualniMnozstvi;
+            }
+            
+          });
+        });
+        mnozstvi.forEach(input => {
+          
+          input.addEventListener('change',(event)=> {
+            
+            if(event.target.checked == true) {
+              aktualniMnozstvi = event.target.value;
+              celkem.textContent = event.target.value * aktualniCena;
+            }
+          });
+          
+        });
+        /*const zpetneVolani = (prvek)
+        => {
+        console.log(prvek);
+        }
+        
+        document.getElementsByClassName('odstavec');
+        prvek.style.display = 'none' // skryjeme prvek přepsáním CSS
+        prvek.remove();
+        
+        // opětovné připojení poznámky k hlavnímu obsahu - toto můžeme provést,
+        // protože jsme si element uložili do konstanty
+        // Pozor! element bude připojen jako poslední potomek main elementu
+        hlavniObsah.append(poznamka);
+        
+        // u formulářů budeme používat hranaté závorky, do 
+        kterých vepíšeme jméno formuláře a následně prvku
+        const formular = document.forms['prihlaseni'];
+        const email = document.forms['prihlaseni']['email'];
+        const heslo = document.forms['prihlaseni']['heslo']
+        
+        
+        otevrit.addEventListener('click', () /> {
+        dialog.showModal();
+        });
+        // zde v callbacku zavřeme dialog
+        zavrit.addEventListener('click', () /> {
+        dialog.close();
+        });
+        */
+        //document.getElementByName('submit');
+        
+        //const submit = document.getElementsByName('submitanswers');
+        //const points = form.getElementsByType ('radio');
+        
+        //form.addEventListener('submit', (event) => {
+        // if(points === true){
+        //    window.location.href = 'answer.html';
+        //}else{
+        //}event.preventDefault();
+        
+        
+        /*const inputs = form.querySelectorAll('input')
+        inputs.forEach((input) => {
+        window.location.href = 'answer.html';
+        
+        
+        });
+        /* if (input.type === 'submit') {
+        alert('You must fill in all the fields');
+        
+        if (input.name === 'submitanswers'){
+        alert ('You must filffssfl in all the fields');
+        }else{
+        alert('You have successfully submitted the form');
+        window.location.href = 'answer.html';
+        }
+        }});*/
+        
+        //});
+        
+        
+      </script>
+    </body>
