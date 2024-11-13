@@ -49,12 +49,29 @@ width: 80%;
       background-color: whitesmoke;
       width: 80%;
     }
-    div.otazky{
+/*
+    #radioContainer{
       display: flex;
-      flex-direction:column;
+      flex-direction:row;
       justify-content: space-around;
       width: 80%;
-    }
+    }*/
+
+/* Style each radio group container */
+.radio-group {
+  margin-bottom: 20px; /* Add spacing between groups */
+  display: flex;
+  flex-direction: row; /* Ensures that label and inputs are in a vertical stack */
+}
+
+/* Style the main label for each group */
+.group-label {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
     form{
       display: flex;
       flex-direction: column;

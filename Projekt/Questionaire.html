@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>
-    Questionnaire
-  </title>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <link rel="stylesheet" href="projektStyle.css">
+
+  <title> Questionnaire </title>
 </head>
+
 
 <body>
   <aside>
@@ -17,12 +18,16 @@
       <article>
         <p class="popup-text">test</p>
       </article>
+      <figure>
+        <figcaption>obrazek</figcaption>
+        <img src="https://www.w3schools.com/w3images/avatar2.png" alt="avatar">
+      </figure><!-- obal pro obrazky a grafiku -->
     </div>
     
-    <script>// Select the pop-up element
+    <script>
       const hoverarea = document.querySelector('.hover-area');
       const popup = document.querySelector('.popup');
-      // Hide the popup when the mouse leaves the pop-up area
+
       hoverarea.addEventListener('mouseleave', () => {
         popup.style.right = '-20%';
         hoverarea.style.right = '-20%';
@@ -41,36 +46,64 @@
     </nav>
     <main>
       <header>
-        <div class="text">
-          <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint"</p>
+        <hr>
+        <span>
+          <p>1=vůbec, 5=úplně</p>
             
-          </div>
+          </span>
+          </hr>
         </header>
         <div class="otazky">
           <form action="#" method="post">
             <fieldset>
-              <label for="W">
-                <input type="radio" name="cena" value="1" required>
-                <input type="radio" name="cena" value="2" required>
-                <input type="radio" name="cena" value="3" required>
-                <input type="radio" name="cena" value="4" required>
-                <input type="radio" name="cena" value="5" required>
-                fseffese
-              </label>
-              <label for="A">
-                <input type="radio" name="mnozstvi" value="1" required>
-                <input type="radio" name="mnozstvi" value="2" required>
-                <input type="radio" name="mnozstvi" value="3" required>
-                <input type="radio" name="mnozstvi" value="4" required>
-                <input type="radio" name="mnozstvi" value="5" required>
-                fhfhfxhxtf
-              </label>
+              <div id="radioContainer"></div>
+              <script>
+                const otazky = [
+                    { name: 'Jak chlupaté máte nohy?', values: ['1', '2', '3', '4', '5'] },
+                    { name: 'w', values: ['1', '2', '3', '4', '5'] },
+                    { name: 'a', values: ['1', '2', '3', '4', '5'] },
+                    { name: 's', values: ['1', '2', '3', '4', '5'] },
+                    { name: 'd', values: ['1', '2', '3', '4', '5'] },
+                ];
+                
+                // Get the container element where the radio buttons will be added
+                const container = document.getElementById("radioContainer");
+                
+                otazky.forEach((item, index) => {
+    // Create a div wrapper for each group
+    const groupDiv = document.createElement("div");
+    groupDiv.className = "radio-group";
+
+    // Create a label for the group of radio buttons
+    const label = document.createElement("label");
+    label.className = "group-label";
+    label.textContent = `Option ${index + 1} - ${item.name}`;
+    groupDiv.appendChild(label);
+    groupDiv.appendChild(document.createElement("br"));
+
+    // Loop through each value in the values array to create multiple radio inputs
+    item.values.forEach(value => {
+        // Create an input element of type radio
+        const radio = document.createElement("input");
+        radio.type = "radio";
+        radio.name = item.name;  
+        radio.value = value;
+        radio.className = "radio-input";
+
+        // Add a sub-label for each radio button
+        const radioLabel = document.createElement("label");
+        radioLabel.className = "radio-label";
+        radioLabel.textContent = ` ${value}`;
+        
+        // Append the radio button and its label to the group div
+        groupDiv.appendChild(radio);
+        groupDiv.appendChild(radioLabel);
+    });
+
+    // Append the group div to the main container
+    container.appendChild(groupDiv);
+});
+                </script>
               <!--<button type="submit">submit</button>
               -->
               <input type="submit" value="SubmitAnswers" name="submitanswers">
@@ -104,6 +137,8 @@
       
       
       <script>
+
+        /*
         
         let cena= document.querySelectorAll('input[name="cena"]');
         let mnozstvi= document.querySelectorAll('input[name="mnozstvi"]');
@@ -129,6 +164,34 @@
             if(event.target.checked == true) {
               aktualniMnozstvi = event.target.value;
               celkem.textContent = event.target.value * aktualniCena;
+            }
+          });
+          
+        });
+        */
+        
+        let cena= document.querySelectorAll('input[name="PocetBodu"]');
+        let aktualniBody =0;
+        const celkem = document.getElementById('soucet');
+        
+        cena.forEach(input => {
+          
+          input.addEventListener('change',(event)=> {
+            
+            if(event.target.checked == true) {
+              aktualniBody = event.target.PocetBodu;
+              celkem.textContent += event.target.PocetBodu;
+            }
+            
+          });
+        });
+        mnozstvi.forEach(input => {
+          
+          input.addEventListener('change',(event)=> {
+            
+            if(event.target.checked == true) {
+              aktualniBody = event.target.PocetBodu;
+              celkem.textContent += event.target.PocetBodu;
             }
           });
           
